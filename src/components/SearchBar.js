@@ -38,6 +38,7 @@ class SearchBar extends Component {
           <ControlLabel>Zip Code</ControlLabel>
           <FormControl
             type="text"
+            maxLength={5}
             value={this.state.value}
             placeholder="Ex. 78741"
             onChange={this.handleChange}
