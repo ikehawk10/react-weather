@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../App.css';
 import { Grid, Row } from 'react-bootstrap';
 import axios from 'axios';
 

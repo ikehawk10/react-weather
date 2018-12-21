@@ -1,0 +1,19 @@
+.form-control {
+  display: inline-block;
+  width: 80%;
+  margin: 0px 10px;
+  height: 36px
+}
+
+.jumbotron {
+  background-image: url("/assets/images/jumbotron_background.jpg");
+  background-size: cover;
+  padding-top:100px;
+  padding-bottom:100px;
+  background-size:cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-size: 100%;
+  background-position-x: center;
+  background-position-y: center;
+}

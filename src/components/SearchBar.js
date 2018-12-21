@@ -43,9 +43,9 @@ class SearchBar extends Component {
             placeholder="Ex. 78741"
             onChange={this.handleChange}
           />
+          <button type="submit" className="btn btn-success">Search</button>
           <FormControl.Feedback />
           <HelpBlock>{errorMessage}</HelpBlock>
-          <button type="submit" className="btn btn-success">Search</button>
         </FormGroup>
       </form>
     );
