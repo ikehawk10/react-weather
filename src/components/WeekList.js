@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row } from 'react-bootstrap';
 
 import DayItem from './DayItem';
 
-class WeekList extends Component {
-  render() {
+class WeekList extends Component {  
+
+  
+  render(props) {
+    console.log(this.props.weather.list);
+    let cities = this.props.weather ? <DayItem name={this.props.weather.list} /> : <h1>Please enter a zip</h1>
     return (
       <Grid>
         <Row className="show-grid">
-          <DayItem />
+          {cities}
         </Row>
       </Grid>
     )

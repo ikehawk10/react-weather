@@ -5,14 +5,14 @@ import SearchBar from './SearchBar';
 
 class WeatherJumbotron extends Component {
 
-  onSubmit = zip => {
-    this.props.onSubmit(zip)
+  handleSubmit = zip => {
+    this.props.updateWeather(zip)
   }
   render() {
     return(
       <Jumbotron>
           <h3>Search for the weather forcast in your area.</h3>
-          <SearchBar submitForm={this.onSubmit}/>
+          <SearchBar submitForm={this.handleSubmit}/>
         </Jumbotron>
     )
   }

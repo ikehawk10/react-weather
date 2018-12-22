@@ -19,11 +19,12 @@ class SearchBar extends Component {
   }
 
   handleChange = e => {
-    this.setState({ zip: e.target.value });
+    this.setState({ zip: e.target.value })
   }
 
   handleSubmit = e => {
-    this.props.submitForm(this.state.zip)
+    const { zip } = this.state;
+    this.props.submitForm(zip)
     e.preventDefault();
   }
 
@@ -42,6 +43,7 @@ class SearchBar extends Component {
             value={this.state.value}
             placeholder="Ex. 78741"
             onChange={this.handleChange}
+            onSubmit={this.handleSubmit}
           />
           <button type="submit" className="btn btn-success">Search</button>
           <FormControl.Feedback />
