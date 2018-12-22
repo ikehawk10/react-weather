@@ -6,6 +6,7 @@ import axios from 'axios';
 import NavBar from './NavBar';
 import SearchBar from './SearchBar';
 import WeatherJumbotron from './WeatherJumbotron';
+import WeekList from './WeekList';
 
 class App extends Component {
   constructor() {
@@ -19,12 +20,12 @@ class App extends Component {
 
   componentDidMount() {
     console.log('CDM')
-    // const API_KEY = "638f6c8f2b5ff24c1ac36203e6ccdf65";
-    // axios.get(`http://api.openweathermap.org/data/2.5/forecast?zip=${this.state.zip}&APPID=${API_KEY}`)
-    //   .then(result => this.setState({
-    //     weather: result.data
-    //   })
-    // );
+    const API_KEY = "638f6c8f2b5ff24c1ac36203e6ccdf65";
+    axios.get(`http://api.openweathermap.org/data/2.5/forecast?zip=${this.state.zip}&APPID=${API_KEY}`)
+      .then(result => this.setState({
+        weather: result.data
+      })
+    );
   }
 
   handleSubmit = zip => {
@@ -41,9 +42,9 @@ class App extends Component {
           <WeatherJumbotron 
             onSubmit={this.handleSubmit}
           />
-
          </Row>
        </Grid>
+       <WeekList />
        
       </div>
     );
