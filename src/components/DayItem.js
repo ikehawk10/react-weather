@@ -3,17 +3,29 @@ import { Panel, Col } from 'react-bootstrap';
 
 class DayItem extends Component {
   render(props) {
-    console.log(this.props)
+    let weatherList;
+    if (!this.props.weather.list){
+      weatherList = "No weather data"
+    } else {
+      return this.props.weather.list.map(day => {
+        return ( 
+          <Col xs={12} md={2}>
+            <Panel>
+              <Panel.Heading>
+                <Panel.Title componentClass="h3">{day.main.humidity}</Panel.Title>
+              </Panel.Heading>
+              <Panel.Body>{day.weather[0].description}</Panel.Body>
+            </Panel>
+          </Col> 
+        )
+      })
+    }
+
+
     return (
       <div>
-        <Col xs={12} md={3} lg={2}>
-          <Panel>
-            <Panel.Heading>
-              <Panel.Title componentClass="h3">Sunday, December 23rd</Panel.Title>
-            </Panel.Heading>
-            <Panel.Body>Mostly Sunny in </Panel.Body>
-          </Panel>
-        </Col>
+        {weatherList}
+       
       </div>
     );
   }

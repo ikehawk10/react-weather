@@ -26,6 +26,7 @@ class App extends Component {
     const API_KEY = "638f6c8f2b5ff24c1ac36203e6ccdf65";
     axios.get(`http://api.openweathermap.org/data/2.5/forecast?zip=${zip}&APPID=${API_KEY}`)
       .then(result => {
+        console.log(result.data)
         this.setState({
         weather: result.data
       })
@@ -38,7 +39,6 @@ class App extends Component {
 
 
   render() {
-    const list = this.state.weather.length ? <WeekList weather={this.state.weather}/> : "No Data";
     return (
       <div>
         <NavBar />
@@ -49,7 +49,7 @@ class App extends Component {
             />
           </Row>
         </Grid>
-        {list}
+        <WeekList weather={this.state.weather}/>
       </div>
     );
   }
