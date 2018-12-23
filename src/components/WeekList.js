@@ -11,7 +11,7 @@ class WeekList extends Component {
       <Table striped bordered condensed hover>
         <thead>
           <tr>
-            <th>DayItem</th>
+            <th>Day</th>
             <th>Description</th>
             <th>High</th>
             <th>Low</th>
@@ -19,7 +19,9 @@ class WeekList extends Component {
           </tr>
         </thead>
         <tbody>
-         <DayItem weather={this.props.weather.list}/>
+          <DayItem 
+            weather={this.props.weather.list}
+          />
         </tbody>
       </Table>
     )

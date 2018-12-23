@@ -13,7 +13,8 @@ class App extends Component {
     
     this.state = {
       zip: 78741,
-      weather: []
+      weather: [],
+      city: ''
     }
   }
 
@@ -28,7 +29,9 @@ class App extends Component {
       .then(result => {
         console.log(result.data)
         this.setState({
-        weather: result.data
+          zip,
+        weather: result.data,
+        city: result.data.city.name
       })
     });
   }
@@ -47,9 +50,14 @@ class App extends Component {
             <WeatherJumbotron 
               updateWeather={this.submitZip}
             />
+          <h3>Showing the weather data for {this.state.zip} - {this.state.city}</h3>
+
           </Row>
           <Row>
-            <WeekList weather={this.state.weather}/>
+            <WeekList 
+              weather={this.state.weather}
+              day={this.state.day}
+            />
           </Row>
         </Grid>
         
