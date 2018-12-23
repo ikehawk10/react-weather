@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 
 import DayItem from './DayItem';
 
@@ -8,11 +8,19 @@ class WeekList extends Component {
   
   render(props) {
     return (
-      <Grid>
-        <Row className="show-grid">
-        <DayItem weather={this.props.weather} />
-        </Row>
-      </Grid>
+      <Table striped bordered condensed hover>
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Humidity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <DayItem weather={this.props.weather.list}/>
+        </tbody>
+      </Table>
     )
   }
 }
