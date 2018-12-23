@@ -48,8 +48,11 @@ class App extends Component {
               updateWeather={this.submitZip}
             />
           </Row>
+          <Row>
+            <WeekList weather={this.state.weather}/>
+          </Row>
         </Grid>
-        <WeekList weather={this.state.weather}/>
+        
       </div>
     );
   }
