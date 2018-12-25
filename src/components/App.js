@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       zip: 78741,
       weather: [],
-      city: ''
+      city: 'Austin'
     }
   }
 
@@ -51,7 +51,6 @@ class App extends Component {
               updateWeather={this.submitZip}
             />
           <h3>Showing the weather data for {this.state.zip} - {this.state.city}</h3>
-
           </Row>
           <Row>
             <WeekList 
