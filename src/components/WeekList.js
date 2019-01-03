@@ -7,8 +7,10 @@ class WeekList extends Component {
 
   
   render(props) {
-    return (
-      <Table striped bordered condensed hover>
+    return !this.props.weather.list ? <h3>No weather data</h3> : (
+      <div>
+        <h3>Showing the weather data for {this.props.zip} - {this.props.city}</h3>
+        <Table striped bordered condensed hover>
         <thead>
           <tr>
             <th>Day</th>
@@ -24,6 +26,8 @@ class WeekList extends Component {
           />
         </tbody>
       </Table>
+      </div>
+     
     )
   }
 }

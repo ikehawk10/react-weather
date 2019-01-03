@@ -50,12 +50,13 @@ class App extends Component {
             <WeatherJumbotron 
               updateWeather={this.submitZip}
             />
-          <h3>Showing the weather data for {this.state.zip} - {this.state.city}</h3>
           </Row>
           <Row>
             <WeekList 
               weather={this.state.weather}
               day={this.state.day}
+              city={this.state.city}
+              zip={this.state.zip}
             />
           </Row>
         </Grid>
