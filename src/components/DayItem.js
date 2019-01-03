@@ -11,6 +11,7 @@ class DayItem extends Component {
                 <td>{Math.round(( day.main.temp_max - 273.15 ) * 9/5 + 32)}&deg;F</td>
                 <td>{Math.round(( day.main.temp_min - 273.15 ) * 9/5 + 32)}&deg;F</td>
                 <td>{day.main.humidity}%</td>
+                <td>{Math.round(day.wind.speed)} mph</td>
               </tr>
       })
     )

@@ -18,6 +18,7 @@ class WeekList extends Component {
             <th>High</th>
             <th>Low</th>
             <th>Humidity</th>
+            <th>Wind Speed</th>
           </tr>
         </thead>
         <tbody>
